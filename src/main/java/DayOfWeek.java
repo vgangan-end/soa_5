@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ex_3 {
+public class DayOfWeek {
     public static void main(String[] args) {
         int day;
         Scanner in = new Scanner(System.in);
@@ -29,8 +29,7 @@ public class ex_3 {
                     System.out.println("7th day of the week is Sunday");
                     break;
                 default:
-                    System.out.println ("There are only 7 days in a week");
+                    System.out.println ("There are only 7 days in a week. Accordingly, the input of " + day + " is invalid. Please use number between 1 and 7." );
             }
-
     }
 }

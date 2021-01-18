@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ex_2 {
+public class DivisibleNumbers {
     public static void main(String[] args) {
         int n;
         Scanner in = new Scanner(System.in);
@@ -18,6 +18,5 @@ public class ex_2 {
         } else {
             System.out.println(n + " Isn't divisible by 3 and 5");
         }
-
     }
 }

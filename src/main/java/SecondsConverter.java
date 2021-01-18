@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ex_1 {
+public class SecondsConverter {
     public static void main(String[] args) {
         int seconds;
         int minutes;

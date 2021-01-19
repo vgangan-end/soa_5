@@ -2,7 +2,7 @@ package BasicJavaHomeWork;
 
 import java.util.Scanner;
 
-public class Exercise_1 {
+public class TimeCalculation {
     public static void main(String[]args) {
         System.out.print("Please type the seconds: ");
         Scanner in = new Scanner(System.in);

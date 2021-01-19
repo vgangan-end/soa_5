@@ -1,7 +1,7 @@
 package BasicJavaHomeWork;
 import java.util.Scanner;
 
-class Exercise_3 {
+class DaysOfTheWeek {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.print("Please enter number of the day: ");
@@ -31,7 +31,6 @@ class Exercise_3 {
                 break;
             default:
                 System.out.println("Wrong day of the week!");
-                break;
         }
 
         in.close();

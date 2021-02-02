@@ -1,5 +1,8 @@
 package com.endava.soa_5ed.task3_oop;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class Cat extends Feline implements Tail {
     private double size;
     private String name;
@@ -7,12 +10,14 @@ public class Cat extends Feline implements Tail {
     public Cat(String gender, String furColor, String name) {
         super(gender, furColor);
         this.name = name;
+        log.info("Creating Cat with gender: " + gender + ", fur color: " + furColor + ", name: " + name);
     }
 
     public Cat(String gender, String furColor, String name, double size) {
         super(gender, furColor);
         this.name = name;
         this.size = size;
+        log.info("Creating Cat with gender: " + gender + ", fur color: " + furColor + ", name: " + name + " and size: " + size);
     }
 
     public double getSize() {

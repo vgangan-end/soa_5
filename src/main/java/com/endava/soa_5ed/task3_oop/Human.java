@@ -1,5 +1,8 @@
 package com.endava.soa_5ed.task3_oop;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class Human extends Mammal {
     private int heightInCm;
     private int age;
@@ -10,6 +13,7 @@ public class Human extends Mammal {
         this.heightInCm = heightInCm;
         this.age = 0;
         this.name = "Doe";
+        log.info("Creating Human with gender: " + gender + ", height " + heightInCm + ", and default age and name");
 
     }
 
@@ -18,6 +22,7 @@ public class Human extends Mammal {
         this.heightInCm = 50;
         this.age = 0;
         this.name = "Doe";
+        log.info("Creating Human with gender: " + gender + ", and default height, age and name");
     }
 
     public Human(String gender, int heightInCm, int age, String name) {
@@ -25,6 +30,7 @@ public class Human extends Mammal {
         this.heightInCm = heightInCm;
         this.age = age;
         this.name = name;
+        log.info("Creating Human with gender: " + gender + ", height " + heightInCm + ", age: " + age + " and name: " + name);
     }
 
     public String getName() {

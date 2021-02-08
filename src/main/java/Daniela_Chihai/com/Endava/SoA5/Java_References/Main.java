@@ -1,5 +1,7 @@
 package Daniela_Chihai.com.Endava.SoA5.Java_References;
 
+import java.util.Date;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -24,10 +26,10 @@ public class Main {
         Date date = new Date(-124, 7, 2);
         System.out.println(DateTimeRegexEx3.getDayOfTheWeek(date));
         // -2. Signing the declaration of independence of Moldova
-        Date date = new Date(91, 7, 27);
+        //Date date = new Date(91, 7, 27);
         System.out.println(DateTimeRegexEx3.getDayOfTheWeek(date));
         //  -3. Your favorite movie was released.
-        Date date = new Date(54, 8, 3);
+        //Date date = new Date(54, 8, 3);
         System.out.println(DateTimeRegexEx3.getDayOfTheWeek(date));
     }
 }

@@ -1,7 +1,7 @@
 package com.endava.soa_5.array_and_string;
 
 public class MaxIndexOfArray {
-    MaxIndexOfArray() {
+    public MaxIndexOfArray() {
     }
 
     private int[] array;

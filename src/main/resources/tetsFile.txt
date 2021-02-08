@@ -1,0 +1,19 @@
+Exception handling and IO/NIO exercises
+Ex. 1
+Have a read in the internet about property files (filename.properties). Generally, with these files we can set some parameters for the system to read during the code execution and use the variables declared in these files.
+Task:
+1.	Create a .properties file in resources folder
+2.	Choose any 3 exercises you have already completed and require some data to test the code is working (for example: Exercise 3 from DateTime and Regex, any algorithm, or create your own methods which require some simple input parameters like primitives)
+3.	Write the required parameters for the above exercises in the .properties file
+4.	Read the parameters from the .properties file and include them in your exercises as parameters
+5.	Create a custom Exception which will be thrown if the parameters from the .properties file have no value.
+6.	Check that the code is running and you get the expected results
+
+Ex. 2
+In this exercise we will try to read a list of data form a file, filter the information into another list and the resulting list to be written in a new file.
+1.	Create a .txt file with a list of words, for example from https://www.ef.com/wwen/english-resources/english-vocabulary/top-1000-words/ . The file should be in resources folder. You can create a new folder in resources if you want and place the .txt file there.
+2.	Read the .txt file and create a list of all the words from this file.
+3.	Filter the list and create a new list where you will put only the filtered results. You can filter by string length, or by some regex, or create an algorithm to check if the word is a palindrome or if the word has no repeatable letters in it. It is up to you to chose how you want to filter these words.
+4.	The resulting filtered list must be written and saved in a new file in the same directory as the previous .txt file.
+5.	BONUS (Optional): Try to move the resulting file in a new directory also under resources folder.
+6.	BONUS (Optional): Add your file with filtered results in .gitignore so it won’t be committed by accident.

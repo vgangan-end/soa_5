@@ -30,7 +30,7 @@ public class DayPrinter {
                 break;
             default:
                 day = "";
-                System.out.printf("The provided number - %d - is invalid", number);
+                System.out.printf("The provided number - %d - is invalid\n", number);
                 break;
         }
         return day;

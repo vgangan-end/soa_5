@@ -4,7 +4,14 @@ public class ABCDChecker {
     /* Strings - Exercise 2 */
     String word;
 
+    public ABCDChecker() {
+    }
+
     public ABCDChecker(String word) {
+        this.word = word;
+    }
+
+    public void setWord(String word) {
         this.word = word;
     }
 
@@ -19,5 +26,13 @@ public class ABCDChecker {
                 return false;
         }
         return true;
+    }
+
+    @Override
+    public String toString() {
+        if (isAbecedarian()) {
+            return "The word '" + word + "' is abecedarian";
+        } else
+            return "The word '" + word + "' is not abecedarian";
     }
 }

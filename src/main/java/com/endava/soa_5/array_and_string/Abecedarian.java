@@ -1,20 +1,23 @@
 package com.endava.soa_5.array_and_string;
 
 public class Abecedarian {
-    Abecedarian() {
+
+    private String word;
+
+    public Abecedarian() {
     }
 
-    Abecedarian(String word) {
+    public Abecedarian(String word) {
         this.word = word;
-        proveIsAbecedarian();
     }
-
-    String word;
 
     public boolean proveIsAbecedarian() {
 
         boolean isAbecedarian = true;
         char[] stringArray = new char[word.length()];
+        if (word.equals("") || word == null) {
+            return false;
+        }
         for (int i = 0; i < word.length(); i++) {
             stringArray[i] = word.toUpperCase().charAt(i);
         }

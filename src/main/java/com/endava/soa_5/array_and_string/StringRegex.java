@@ -7,14 +7,14 @@ import java.util.regex.Pattern;
 import static java.util.regex.Pattern.compile;
 
 public class StringRegex {
-    StringRegex() {
+    public StringRegex() {
     }
 
     private StringBuilder randomString = new StringBuilder();
     private int stringLength;
     private String regex;
     private Pattern pattern;
-    Matcher matcher;
+    private Matcher matcher;
 
     public int getStringLength() {
         return stringLength;

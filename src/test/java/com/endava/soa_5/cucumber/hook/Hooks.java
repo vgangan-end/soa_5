@@ -1,7 +1,7 @@
 package com.endava.soa_5.cucumber.hook;
 
 import io.cucumber.java.After;
-import org.junit.Before;
+import io.cucumber.java.Before;
 
 public class Hooks {
 

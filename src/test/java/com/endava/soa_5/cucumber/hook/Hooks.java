@@ -1,5 +1,7 @@
 package com.endava.soa_5.cucumber.hook;
 
+import com.endava.soa_5.abstract_classes.BaseAction;
+import com.endava.soa_5.abstract_classes.BaseClass;
 import io.cucumber.java.After;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.Status;
@@ -7,9 +9,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.swing.*;
+
 import static java.lang.String.format;
 
-public class Hooks {
+public class Hooks extends BaseAction {
     Logger log = LoggerFactory.getLogger(Hooks.class);
 
     @BeforeEach

@@ -12,9 +12,8 @@ import org.junit.runner.RunWith;
         plugin = {"pretty",
                 "html:target/cucumber.html",
                 "json:target/cucumber.json"},
-        tags = "not @Ignore"
+        tags = "@UserLogsIn"
 )
 
 public class TestRunner {
 }
-

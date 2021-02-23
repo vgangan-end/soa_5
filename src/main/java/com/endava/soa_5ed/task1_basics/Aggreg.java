@@ -4,10 +4,9 @@ public class Aggreg {
     public static void main(String[] args) {
         SecondsConverter secondsConverter = new SecondsConverter();
         int time = 50000;
+        secondsConverter.setTime(time);
         System.out.println("Converting " + time + " seconds: "
-                + secondsConverter.convertToHours(time) + " hours, "
-                + secondsConverter.convertToMinutes(time) + " minutes, "
-                + secondsConverter.convertToSeconds(time) + " seconds.");
+                + secondsConverter.toString());
 
         DivisibleChecker divisibleChecker = new DivisibleChecker();
         divisibleChecker.checkDivisible(7);

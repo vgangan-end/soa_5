@@ -90,6 +90,4 @@ public class HomePage extends BasePage {
     public WebElement getCompareProductsButton() {
         return compareProductsButton;
     }
-
-
 }

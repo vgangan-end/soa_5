@@ -4,7 +4,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public abstract class BaseAction extends BaseClass{
+    public Logger log;
     public BaseAction(){
-        Logger logger = LoggerFactory.getLogger(this.getClass());
+        log = LoggerFactory.getLogger(this.getClass());
     }
 }

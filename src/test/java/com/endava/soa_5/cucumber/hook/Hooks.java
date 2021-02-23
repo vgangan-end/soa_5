@@ -14,7 +14,6 @@ import javax.swing.*;
 import static java.lang.String.format;
 
 public class Hooks extends BaseAction {
-    Logger log = LoggerFactory.getLogger(Hooks.class);
 
     @BeforeEach
     public void beforeScenario(Scenario scenario) {

@@ -1,10 +1,10 @@
 package com.endava.soa_5.actions;
 
 
-import com.endava.soa_5.abstract_classes.BasePage;
+import com.endava.soa_5.abstract_classes.BaseClass;
 import com.endava.soa_5.page_objects.CompareProductsPage;
 
-public class CompareProductsPageActions extends BasePage {
+public class CompareProductsPageActions extends BaseClass {
     CompareProductsPage compareProductsPage;
 
     public CompareProductsPageActions() {

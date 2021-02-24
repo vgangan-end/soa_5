@@ -1,10 +1,11 @@
 package com.endava.soa_5.page_objects;
 
-import com.endava.soa_5.abstract_classes.BasePage;
+import com.endava.soa_5.abstract_classes.BaseClass;
+import lombok.Getter;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
-public class HomePage extends BasePage {
+@Getter
+public class HomePage extends BaseClass {
 
     private @FindBy(xpath = "//a[@class='ico-register']")
     WebElement registerButton;
@@ -34,60 +35,4 @@ public class HomePage extends BasePage {
     WebElement giftCardsButton;
     private @FindBy(xpath = "//a[contains(text(),'Compare products list')]")
     WebElement compareProductsButton;
-
-    public WebElement getRegisterButton() {
-        return registerButton;
-    }
-
-    public WebElement getLogInButton() {
-        return logInButton;
-    }
-
-    public WebElement getShoppingCartButton() {
-        return shoppingCartButton;
-    }
-
-    public WebElement getWishlistButton() {
-        return wishlistButton;
-    }
-
-    public WebElement getSearchInputField() {
-        return searchInputField;
-    }
-
-    public WebElement getSearchButton() {
-        return searchButton;
-    }
-
-    public WebElement getBooksButton() {
-        return booksButton;
-    }
-
-    public WebElement getComputersButton() {
-        return computersButton;
-    }
-
-    public WebElement getElectronicsButton() {
-        return electronicsButton;
-    }
-
-    public WebElement getApparelAndShoesButton() {
-        return apparelAndShoesButton;
-    }
-
-    public WebElement getDigitalDownloadsButton() {
-        return digitalDownloadsButton;
-    }
-
-    public WebElement getJewelryButton() {
-        return jewelryButton;
-    }
-
-    public WebElement getGiftCardsButton() {
-        return giftCardsButton;
-    }
-
-    public WebElement getCompareProductsButton() {
-        return compareProductsButton;
-    }
 }

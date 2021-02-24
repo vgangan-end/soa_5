@@ -15,9 +15,10 @@ public class Driver {
 
     private static final Driver INSTANCE = new Driver();
     private WebDriver driver;
+    private final PropertyReader propertyReader;
 
     private Driver() {
-        PropertyReader propertyReader = new PropertyReader(PROPERTY_FILE_NAME);
+        propertyReader = new PropertyReader(PROPERTY_FILE_NAME);
         final String BROWSER = propertyReader.getPropertyValue("browser").toLowerCase();
         if (driver == null) {
             switch (BROWSER) {
@@ -39,6 +40,10 @@ public class Driver {
 
     public static Driver getInstance() {
         return INSTANCE;
+    }
+
+    public PropertyReader getPropertyReader() {
+        return propertyReader;
     }
 
     public WebDriver getDriver() {

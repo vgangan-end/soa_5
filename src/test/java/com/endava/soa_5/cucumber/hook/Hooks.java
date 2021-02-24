@@ -1,7 +1,7 @@
 package com.endava.soa_5.cucumber.hook;
 
 import com.endava.soa_5.abstract_classes.BaseClass;
-import com.endava.soa_5.context.ScenarioContext;
+import com.endava.soa_5.cucumber.stepdef.PreconditionSteps;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -12,14 +12,13 @@ import static java.lang.String.format;
 
 public class Hooks extends BaseClass {
     Logger log = LoggerFactory.getLogger(this.getClass());
-    ScenarioContext context = ScenarioContext.getScenarioContext();
+    PreconditionSteps preconditionSteps = new PreconditionSteps();
 
     @Before
     public void beforeScenario(Scenario scenario) {
-        String scenarioName = scenario.getName();
-        driver.get(propertyReader.getPropertyValue("url"));
+        preconditionSteps.userAccessSearchPage();
         log.info("---------------------START OF SCENARIO--------------------");
-        log.info("*********************" + scenarioName + "*********************");
+        log.info("*********************" + scenario.getName() + "*********************");
     }
 
     @After

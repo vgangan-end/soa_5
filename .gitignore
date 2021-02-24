@@ -16,5 +16,3 @@
 /target
 /.idea
 *.iml
-src/test/java/com/endava/soa_5/cucumber/runner
-src/test/java/com/endava/soa_5/cucumber/hook

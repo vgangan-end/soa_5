@@ -1,17 +1,15 @@
 package com.endava.soa_5.actions;
 
-import com.endava.soa_5.drivers.Driver;
-import com.endava.soa_5.page_objects.enums.CategoryEnum;
 import com.endava.soa_5.page_objects.SearchPage;
+import com.endava.soa_5.page_objects.enums.CategoryEnum;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SearchPageActions {
+public class SearchPageActions extends GenericActions {
     SearchPage searchPage;
     List<WebElement> elements = new ArrayList<>();
 
@@ -20,6 +18,7 @@ public class SearchPageActions {
     }
 
     public String getPageConfirmation() {
+        waitForElement(searchPage.getSearchHeader());
         return searchPage.getSearchHeader().getText();
     }
 
@@ -30,47 +29,23 @@ public class SearchPageActions {
         searchPage.getSearchField().sendKeys(product);
     }
 
-    public void clickOnSearchField() {
-
-        searchPage.getSearchField().click();
-    }
-
     public void submitSearch() {
         searchPage.getSearchButton().click();
     }
 
-    public void insertPriceFrom(String price) {
-        searchPage.getPriceFromField().sendKeys(price);
-    }
-
-    public void insertPriceTo(String price) {
-        searchPage.getPriceToField().sendKeys(price);
-    }
-
-    public void clickOnSubCategoriesCheckBox() {
-        searchPage.getSearchInSubCategoriesCheckBox().click();
-    }
-
-    public void clickOnAdvancedSearchCheckBox() {
-        searchPage.getAdvancedSearchCheckBox().click();
-    }
-
-    public void clickOnCategoryDropDown() {
-        searchPage.getCategoryDropDown().click();
-    }
-
     public void selectFromDropDown(CategoryEnum word) {
-        clickOnCategoryDropDown();
+        clickOnElement(searchPage.getCategoryDropDown());
         Select category = new Select(searchPage.getCategoryDropDown());
         category.selectByVisibleText(word.getCategory());
     }
 
     public String getWarningMessage() {
+        waitForElement(searchPage.getWarningMessage());
         return searchPage.getWarningMessage().getText();
     }
 
     public void searchElementsOnProductGrid() {
-        WebDriver driver = Driver.getInstance().getDriver();
+        waitForElement(searchPage.getProductGrid());
         elements = driver.findElements(By.xpath("//h2[@class='product-title']"));
     }
 

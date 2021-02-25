@@ -9,8 +9,8 @@ public abstract class BaseClass {
     public WebDriver driver;
     public PropertyReader propertyReader;
     public BaseClass(){
-        PageFactory.initElements(driver, this);
         propertyReader = Driver.getInstance().getPropertyReader();
         driver = Driver.getInstance().getDriver();
+        PageFactory.initElements(driver, this);
     }
 }

@@ -7,6 +7,4 @@ public class GenericActions extends BaseAction {
     public static void clickOnElement(WebElement element){
         element.click();
     }
-    //TODO: add generic waiter method here;
-    //TODO: add some generic asserts here;
 }

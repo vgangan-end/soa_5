@@ -6,6 +6,7 @@ import com.endava.soa_5.page_objects.LogInPageObject;
 
 public class LogInAction extends BaseClass {
     LogInPageObject logInPageObject = new LogInPageObject(Driver.getInstance().getDriver());
+    GenericActions genericActions = new GenericActions();
 
     public void login() {
         logInPageObject.getLogInLink().click();
@@ -18,6 +19,7 @@ public class LogInAction extends BaseClass {
     }
 
     public String checkAccountNameIsDisplayed() {
+        genericActions.waitForElement(logInPageObject.getAccountName());
         return logInPageObject.getAccountName().getText();
     }
 }

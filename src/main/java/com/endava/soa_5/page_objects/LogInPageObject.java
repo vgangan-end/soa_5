@@ -1,17 +1,17 @@
 package com.endava.soa_5.page_objects;
 
+import com.endava.soa_5.abstract_classes.BaseClass;
 import lombok.Getter;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 @Getter
-public class LogInPageObject {
-    private WebDriver driver;
+public class LogInPageObject extends BaseClass {
 
     @FindBy(xpath = "//div[@class=\"header-links\"]//a[@class=\"ico-login\"]")
     private WebElement logInLink;
+    @FindBy(xpath = "//a[@href=\"/logout\"]")
+    private WebElement logOutLink;
     @FindBy(xpath = "//input[@id=\"Email\"]")
     private WebElement emailInputField;
     @FindBy(xpath = "//input[@id=\"Password\"]")
@@ -20,9 +20,6 @@ public class LogInPageObject {
     private WebElement logInButton;
     @FindBy(xpath = "//div[@class='header-links']//a[@class='account']")
     private WebElement accountName;
-
-    public LogInPageObject(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
-    }
+    @FindBy(xpath = "//div[@class=\"validation-summary-errors\"]")
+    private WebElement wrongCredentialsMessage;
 }

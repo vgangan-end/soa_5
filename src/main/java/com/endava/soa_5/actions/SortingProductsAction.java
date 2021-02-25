@@ -1,24 +1,24 @@
 package com.endava.soa_5.actions;
 
+import com.endava.soa_5.abstract_classes.BaseClass;
 import com.endava.soa_5.drivers.Driver;
 import com.endava.soa_5.page_objects.SortingProductsObjects;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class SortingProductsAction {
-    static WebDriver driver = Driver.getInstance().getDriver();
-    WebDriverWait wait = new WebDriverWait(driver, 10);
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.IsEqual.equalTo;
 
-    static SortingProductsObjects sortingProductsObjects = new SortingProductsObjects(driver);
+public class SortingProductsAction extends BaseClass {
+    static SortingProductsObjects sortingProductsObjects = new SortingProductsObjects();
+    GenericActions genericActions = new GenericActions();
 
-    public static void navigateToProductsPage() {
+    public void navigateToProductsPage() {
+        genericActions.waitForElement(sortingProductsObjects.getComputerLink());
         sortingProductsObjects.getComputerLink().click();
         sortingProductsObjects.getDesktopsLink().click();
     }
@@ -34,40 +34,32 @@ public class SortingProductsAction {
     }
 
     public boolean sortAscending() {
-        wait.until(ExpectedConditions.visibilityOf(sortingProductsObjects.getListOfAllPrices()));
+        genericActions.waitForElement(sortingProductsObjects.getListOfAllPrices());
         List<WebElement> elements = Driver.getInstance().getDriver().findElements(By.xpath("//div[@class=\"prices\"]//span[@class=\"price actual-price\"]"));
-
-        List<Double> integerList = new ArrayList<>();
+        List<Double> sortedAscPriceList = new ArrayList<>();
+        List<Double> listOfPricesSortedFromWeb = new ArrayList<>();
 
         for (WebElement element : elements) {
-            integerList.add(Double.parseDouble(element.getText()));
+            sortedAscPriceList.add(Double.parseDouble(element.getText()));
+            listOfPricesSortedFromWeb.add(Double.parseDouble(element.getText()));
         }
-        Collections.sort(integerList);
-
-        for (int i = 0; i < elements.size() - 1; i++) {
-            if ((Double.parseDouble(elements.get(i).getText()) != (integerList.get(i)))) {
-                return false;
-            }
-        }
+        Collections.sort(sortedAscPriceList);
+        assertThat("List is sorted ascending", listOfPricesSortedFromWeb, equalTo(sortedAscPriceList));
         return true;
     }
 
     public boolean sortDescending() {
-        wait.until(ExpectedConditions.visibilityOf(sortingProductsObjects.getListOfAllPrices()));
+        genericActions.waitForElement(sortingProductsObjects.getListOfAllPrices());
         List<WebElement> elements = Driver.getInstance().getDriver().findElements(By.xpath("//div[@class=\"prices\"]//span[@class=\"price actual-price\"]"));
-        List<Double> integerList = new ArrayList<>();
+        List<Double> sortedDescPriceList = new ArrayList<>();
+        List<Double> listOfPricesSortedFromWeb = new ArrayList<>();
 
         for (WebElement element : elements) {
-            integerList.add(Double.parseDouble(element.getText()));
+            sortedDescPriceList.add(Double.parseDouble(element.getText()));
+            listOfPricesSortedFromWeb.add(Double.parseDouble(element.getText()));
         }
-
-        Collections.sort(integerList, Collections.reverseOrder());
-
-        for (int i = 0; i < elements.size() - 1; i++) {
-            if ((Double.parseDouble(elements.get(i).getText()) != (integerList.get(i)))) {
-                return false;
-            }
-        }
+        sortedDescPriceList.sort(Collections.reverseOrder());
+        assertThat("List is sorted ascending", listOfPricesSortedFromWeb, equalTo(sortedDescPriceList));
         return true;
     }
 }

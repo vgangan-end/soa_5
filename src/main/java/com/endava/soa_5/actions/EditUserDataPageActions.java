@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class EditUserDataPageActions extends BaseClass {
     private CustomerInfoPage customerInfoPage = new CustomerInfoPage();
-    private LogInPageObject logInPageObject = new LogInPageObject(driver);
+    private LogInPageObject logInPageObject = new LogInPageObject();
     private GenericActions genericActions = new GenericActions();
 
     public void clickAccountNameButton() {

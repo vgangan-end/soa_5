@@ -27,7 +27,7 @@ public class LogInSteps extends BaseClass {
         log.info("[Log in] button is clicked");
     }
 
-    @Then("User is logged in")
+    @Then("User is logged in.")
     public void userIsLoggedInWithRightAccount() {
         assertThat("LogIn was successful", logInAction.checkAccountNameIsDisplayed(), is(propertyReader.getPropertyValue("userName")));
         log.info("Log in confirmation is passed");

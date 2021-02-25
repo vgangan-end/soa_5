@@ -27,7 +27,7 @@ public class EditUserDataSteps extends BaseClass {
     private EditUserDataPageActions editUserDataPageActions = new EditUserDataPageActions();
     private GenericActions genericActions = new GenericActions();
     private CustomerInfoPage customerInfoPage = new CustomerInfoPage();
-    private LogInPageObject logInPageObject = new LogInPageObject(driver);
+    private LogInPageObject logInPageObject = new LogInPageObject();
 
     @Given("user access My Account page")
     public void userAccessMyAccountPage() {

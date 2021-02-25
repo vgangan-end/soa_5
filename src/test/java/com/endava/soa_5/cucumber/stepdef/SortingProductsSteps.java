@@ -1,7 +1,6 @@
 package com.endava.soa_5.cucumber.stepdef;
 
 import com.endava.soa_5.actions.SortingProductsAction;
-import com.endava.soa_5.cucumber.hook.Hooks;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -13,17 +12,17 @@ import static org.hamcrest.core.Is.is;
 
 public class SortingProductsSteps {
     SortingProductsAction sortingProductsAction = new SortingProductsAction();
-    static Logger log = LoggerFactory.getLogger(Hooks.class);
+    static Logger log = LoggerFactory.getLogger(SortingProductsSteps.class);
 
     @Given("User navigate on productsListPage")
     public void userNavigateOnProductsListPage() {
-        SortingProductsAction.navigateToProductsPage();
+        sortingProductsAction.navigateToProductsPage();
         log.info("User Navigate to Products page");
     }
 
     @When("user selects sorting by Price: Low to High")
     public void userSelectsSortingByPriceLowToHigh() {
-        SortingProductsAction.selectSortingLowToHigh();
+        sortingProductsAction.selectSortingLowToHigh();
         log.info("User selects sorting by price low to high");
     }
 

@@ -1,14 +1,12 @@
 package com.endava.soa_5.page_objects;
 
+import com.endava.soa_5.abstract_classes.BaseClass;
 import lombok.Getter;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 @Getter
-public class SortingProductsObjects {
-    private WebDriver driver;
+public class SortingProductsObjects extends BaseClass {
 
     @FindBy(xpath = "//div[@class=\"listbox\"]//a[@href=\"/computers\"]")
     private WebElement computerLink;
@@ -22,9 +20,4 @@ public class SortingProductsObjects {
     private WebElement priceHighToLow;
     @FindBy(xpath = "//div[@class=\"prices\"]//span[@class=\"price actual-price\"]")
     private WebElement listOfAllPrices;
-
-    public SortingProductsObjects(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
-    }
 }

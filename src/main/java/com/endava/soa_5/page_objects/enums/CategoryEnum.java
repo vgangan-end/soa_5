@@ -1,4 +1,4 @@
-package com.endava.soa_5.page_objects;
+package com.endava.soa_5.page_objects.enums;
 
 public enum CategoryEnum {
     ALL("All"),

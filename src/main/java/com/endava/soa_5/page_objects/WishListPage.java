@@ -1,13 +1,13 @@
 package com.endava.soa_5.page_objects;
 
-import com.endava.soa_5.abstract_classes.BasePage;
+import com.endava.soa_5.abstract_classes.BaseClass;
 import lombok.Getter;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 
 @Getter
-public class WishListPage extends BasePage {
+public class WishListPage extends BaseClass {
     @FindBy(xpath = "//input[@name='updatecart']")
     private WebElement updateWishListButton;
     @FindBy(xpath = "//input[@name='addtocartbutton']")

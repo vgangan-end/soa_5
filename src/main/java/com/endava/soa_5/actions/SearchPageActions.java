@@ -1,7 +1,7 @@
 package com.endava.soa_5.actions;
 
 import com.endava.soa_5.drivers.Driver;
-import com.endava.soa_5.page_objects.CategoryEnum;
+import com.endava.soa_5.page_objects.enums.CategoryEnum;
 import com.endava.soa_5.page_objects.SearchPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

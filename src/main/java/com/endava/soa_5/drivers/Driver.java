@@ -1,4 +1,4 @@
-package com.endava.soa_5;
+package com.endava.soa_5.drivers;
 
 import com.endava.soa_5.tools.PropertyReader;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -12,7 +12,6 @@ import java.util.Collections;
 import static com.endava.soa_5.tools.Constants.PROPERTY_FILE_NAME;
 
 public class Driver {
-    final String PROPERTY_FILE_NAME = "Configuration.properties";
     private static final Driver INSTANCE = new Driver();
     private WebDriver driver;
     private final PropertyReader propertyReader;

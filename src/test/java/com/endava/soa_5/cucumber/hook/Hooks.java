@@ -11,22 +11,21 @@ import org.slf4j.LoggerFactory;
 import static java.lang.String.format;
 
 public class Hooks extends BaseClass {
+    Logger log = LoggerFactory.getLogger(this.getClass());
     ScenarioContext context = ScenarioContext.getScenarioContext();
-    static Logger log = LoggerFactory.getLogger(Hooks.class);
 
     @Before
     public void beforeScenario(Scenario scenario) {
-//        context.saveData(Keys.DRIVER, driver);
         String scenarioName = scenario.getName();
         driver.get(propertyReader.getPropertyValue("url"));
         log.info("---------------------START OF SCENARIO--------------------");
         log.info("*********************" + scenarioName + "*********************");
-
     }
 
     @After
     public void afterScenario(Scenario scenario) {
         log.info("---------------------END OF SCENARIO--------------------");
         log.info(format("ENDING TEST: [%s] %s ", scenario.getStatus().toString().toUpperCase(), scenario.getName()));
+        driver.manage().deleteAllCookies();
     }
 }

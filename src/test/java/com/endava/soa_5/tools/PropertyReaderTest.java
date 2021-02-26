@@ -12,7 +12,7 @@ class PropertyReaderTest {
 
     @BeforeEach
     void setUp() {
-        propertyReader = new PropertyReader("Configuration.properties");
+        propertyReader = new PropertyReader("TestConfiguration.properties");
     }
 
     @Test

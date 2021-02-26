@@ -8,11 +8,11 @@ Feature: Test user registration flow
   Scenario: Register new user account with valid credentials
     When user chooses GENDER_MALE
     And user fills the form with data:
-      | FIRST_NAME       | LELELE       |
-      | LAST_NAME        | Ololo        |
-      | EMAIL            | lool@kek.lol |
-      | PASSWORD         | SecretPass1  |
-      | CONFIRM_PASSWORD | SecretPass1  |
+      | FIRST_NAME       | Andrew          |
+      | LAST_NAME        | Black           |
+      | EMAIL            | anblack@mail.cz |
+      | PASSWORD         | Pass123         |
+      | CONFIRM_PASSWORD | Pass123         |
     And user clicks Register page Register button
     Then confirmation message is displayed
 

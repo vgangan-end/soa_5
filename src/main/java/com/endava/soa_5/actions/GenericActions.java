@@ -38,4 +38,9 @@ public class GenericActions extends BaseClass {
         int size = driver.findElements(By.xpath(selector)).size();
         assertThat("At least one element of xpath:'" + selector + "' should be present", size, not(0));
     }
+
+    public void assertElementIsNotDisplayed(String selector) {
+        int size = driver.findElements(By.xpath(selector)).size();
+        assertThat("No elements of xpath:'" + selector + "' should be present", size < 1);
+    }
 }

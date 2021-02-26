@@ -55,6 +55,7 @@ public class RegisterSteps extends BaseClass {
     public void userFillsTheForm(DataTable dataTable) {
         Map<String, String> parsedDataMap = dataTable.asMap(String.class, String.class);
         Map<RegisterPageEnum, String> finalMap = new HashMap<>();
+
         for (Map.Entry<String, String> entry : parsedDataMap.entrySet()) {
             RegisterPageEnum pageEnum = RegisterPageEnum.valueOf(entry.getKey());
             finalMap.put(pageEnum, entry.getValue());

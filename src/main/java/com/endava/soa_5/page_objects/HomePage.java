@@ -2,11 +2,15 @@ package com.endava.soa_5.page_objects;
 
 import com.endava.soa_5.abstract_classes.BaseClass;
 import lombok.Getter;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 @Getter
 public class HomePage extends BaseClass {
+
+    private @FindBy(xpath = "//a[contains(text(), 'Computers')]")
+    WebElement computersButton;
 
     private @FindBy(xpath = "//a[@class='ico-register']")
     WebElement registerButton;
@@ -22,8 +26,13 @@ public class HomePage extends BaseClass {
     WebElement searchButton;
     private @FindBy(xpath = "//ul[@class='top-menu']//a[contains(text(), 'Books')]")
     WebElement booksButton;
-    private @FindBy(xpath = "//ul[@class='top-menu']//a[contains(text(), 'Computers')]")
-    WebElement computersButton;
+    private @FindBy(xpath = "//ul[@class='sublist firstLevel']//a[contains(text(), 'Notebooks')]")
+    WebElement notebooksButton;
+
+    public WebElement getButton(String selector) {
+        return driver.findElement(By.xpath(selector));
+    }
+
     private @FindBy(xpath = "//ul[@class='top-menu']//a[contains(text(), 'Electronics')]")
     WebElement electronicsButton;
     private @FindBy(xpath = "//ul[@class='top-menu']//a[contains(text(), 'Apparel & Shoes')]")

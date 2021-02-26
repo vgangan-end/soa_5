@@ -8,7 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 public abstract class BaseClass {
     public WebDriver driver;
     public PropertyReader propertyReader;
-    public BaseClass(){
+
+    public BaseClass() {
         propertyReader = Driver.getInstance().getPropertyReader();
         driver = Driver.getInstance().getDriver();
         PageFactory.initElements(driver, this);

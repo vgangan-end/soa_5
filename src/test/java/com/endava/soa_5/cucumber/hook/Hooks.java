@@ -12,11 +12,10 @@ import static java.lang.String.format;
 
 public class Hooks extends BaseClass {
     Logger log = LoggerFactory.getLogger(this.getClass());
-    PreconditionSteps preconditionSteps = new PreconditionSteps();
 
     @Before
     public void beforeScenario(Scenario scenario) {
-        preconditionSteps.userAccessSearchPage();
+        driver.get(propertyReader.getPropertyValue("url"));
         log.info("---------------------START OF SCENARIO--------------------");
         log.info("*********************" + scenario.getName() + "*********************");
     }

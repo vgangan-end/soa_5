@@ -4,6 +4,7 @@ import com.endava.soa_5.abstract_classes.BaseClass;
 import lombok.Getter;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
 @Getter
 public class HomePage extends BaseClass {
 

@@ -6,10 +6,11 @@ public enum PageTitlesEnum {
 
     String title;
 
-    PageTitlesEnum(String title){
-        this.title=title;
+    PageTitlesEnum(String title) {
+        this.title = title;
     }
-    public String getTitle(){
+
+    public String getTitle() {
         return this.title;
     }
 }

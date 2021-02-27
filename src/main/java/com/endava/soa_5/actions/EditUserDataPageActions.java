@@ -3,7 +3,7 @@ package com.endava.soa_5.actions;
 import com.endava.soa_5.abstract_classes.BaseClass;
 import com.endava.soa_5.page_objects.LogInPageObject;
 import com.endava.soa_5.page_objects.MyAccountPage.CustomerInfoPage;
-import com.endava.soa_5.page_objects.enums.GenderEnums;
+import com.endava.soa_5.page_objects.enums.GenderEnum;
 
 import java.util.Map;
 
@@ -19,9 +19,9 @@ public class EditUserDataPageActions extends BaseClass {
 
     public void fillInCustomerInfo(Map<String, String> userData) {
         if (userData.get("Gender") != null) {
-            if (userData.get("Gender").equalsIgnoreCase(GenderEnums.MALE.getGenderEnum())) {
+            if (userData.get("Gender").equalsIgnoreCase(GenderEnum.MALE.getGenderEnum())) {
                 customerInfoPage.getMaleRadioButton().click();
-            } else if (userData.get("Gender").equalsIgnoreCase(GenderEnums.FEMALE.getGenderEnum())) {
+            } else if (userData.get("Gender").equalsIgnoreCase(GenderEnum.FEMALE.getGenderEnum())) {
                 customerInfoPage.getFemaleRadioButton().click();
             }
         }
@@ -36,9 +36,9 @@ public class EditUserDataPageActions extends BaseClass {
     }
 
     public String getGenderCheck(String gender) {
-        if (gender.equalsIgnoreCase(GenderEnums.MALE.getGenderEnum())) {
+        if (gender.equalsIgnoreCase(GenderEnum.MALE.getGenderEnum())) {
             return customerInfoPage.getMaleRadioButton().getAttribute("checked");
-        } else if (gender.equalsIgnoreCase(GenderEnums.FEMALE.getGenderEnum())) {
+        } else if (gender.equalsIgnoreCase(GenderEnum.FEMALE.getGenderEnum())) {
             return customerInfoPage.getFemaleRadioButton().getAttribute("checked");
         }
         throw new IllegalArgumentException("No GenderEnums for value: " + gender);

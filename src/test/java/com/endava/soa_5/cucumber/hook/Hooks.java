@@ -16,13 +16,13 @@ public class Hooks extends BaseClass {
     @Before
     public void beforeScenario(Scenario scenario) {
         driver.get(propertyReader.getPropertyValue("url"));
-        log.info("---------------------START OF SCENARIO--------------------");
-        log.info("*********************" + scenario.getName() + "*********************");
+        log.info("--------------------- START OF SCENARIO --------------------");
+        log.info("********************* " + scenario.getName() + " *********************");
     }
 
     @After
     public void afterScenario(Scenario scenario) {
-        log.info("---------------------END OF SCENARIO--------------------");
+        log.info("--------------------- END OF SCENARIO --------------------");
         log.info(format("ENDING TEST: [%s] %s ", scenario.getStatus().toString().toUpperCase(), scenario.getName()));
         driver.manage().deleteAllCookies();
     }

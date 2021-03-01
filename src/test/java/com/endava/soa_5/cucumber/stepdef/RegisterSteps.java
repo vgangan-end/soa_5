@@ -14,13 +14,14 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.By;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-
+@Slf4j
 public class RegisterSteps extends BaseClass {
     HomePage homePage = new HomePage();
     RegisterPage registerPage = new RegisterPage();
@@ -29,26 +30,31 @@ public class RegisterSteps extends BaseClass {
     @Given("{} page is displayed")
     public void pageIsDisplayed(PageTitlesEnum title) {
         genericActions.assertPageIsDisplayed(title.getTitle());
+        log.info(title + " page is displayed");
     }
 
     @When("user clicks Homepage Register button")
     public void userClicksHomepageRegisterButton() {
         genericActions.clickOnElement(homePage.getRegisterButton());
+        log.info("User clicks Register button on Homepage");
     }
 
     @When("user chooses {}")
     public void userChoosesGender(RegisterPageEnum css) {
         genericActions.clickOnElement(registerPage.getRegisterElement(css.getCss()));
+        log.info("User chooses " + css);
     }
 
     @And("user clicks Register page Register button")
     public void userClicksRegisterPageRegisterButton() {
         genericActions.clickOnElement(registerPage.getRegisterButton());
+        log.info("User clicks Rgister after completing fields with data");
     }
 
     @Then("confirmation message is displayed")
     public void confirmationMessageIsDisplayed() {
         genericActions.assertElementIsDisplayed("//div[contains(text(),'Your registration completed')]");
+        log.info("\"Your registration completed\" confirmation message is displayed");
     }
 
     @And("user fills the form with data:")
@@ -61,6 +67,7 @@ public class RegisterSteps extends BaseClass {
             finalMap.put(pageEnum, entry.getValue());
         }
         registerPage.fillRegisterForm(finalMap);
+        log.info("The user fills the registration form with data");
     }
 
     @Then("two warnings are displayed")
@@ -69,5 +76,6 @@ public class RegisterSteps extends BaseClass {
         assertThat("Wrong number of messages 'Password is required'",
                 driver.findElements(By.xpath("//span[contains(text(), 'Password is required')]")).size(),
                 is(2));
+        log.info("\"Password is required\" warnings are displayed for both fields");
     }
 }

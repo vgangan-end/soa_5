@@ -38,7 +38,7 @@ public class FilterByPriceActions extends BaseClass {
 
     public boolean getIsUnderPriceLimit(String limitType) {
         if (limitType.equalsIgnoreCase("under") || limitType.equalsIgnoreCase("over")) {
-            return limitType.equalsIgnoreCase("under");//?
+            return limitType.equalsIgnoreCase("under");
         } else throw new IllegalArgumentException("Invalid limit type: " + limitType);
     }
 

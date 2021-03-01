@@ -26,24 +26,19 @@ public class FilterByPriceSteps extends BaseClass {
 
     @Given("user navigates to {} category page")
     public void userNavigatesToCategoryPage(PageTitlesEnum categoryName) {
-        genericActions.waitForElement(homePage.getBooksButton());
         filterByPriceActions.clickCategoryButton(categoryName);
         filterByPriceActions.booksPageTitleIsDisplayed();
-        genericActions.assertElementIsDisplayed("//div[@class='page-title']//h1");
         log.info("User navigates to BOOKS category page");
     }
 
     @Given("Filter by price title is displayed")
     public void filterByPriceTitleIsDisplayed() {
-        genericActions.waitForElement(filterByPricePage.getFilterByPriceTitle());
         filterByPriceActions.filterByPriceTitleIsDisplayed();
-        genericActions.assertElementIsDisplayed("//div[@class='filter-title']//strong");
         log.info("Filter by price title is displayed");
     }
 
     @When("user filters products by price under 25")
     public void userFiltersProductsByPriceUnder25() {
-        genericActions.waitForElement(filterByPricePage.getPriceUnder25FilterButton());
         filterByPriceActions.clickUnder25PriceButton();
         log.info("User filter the products with the price under 25.00");
     }
@@ -57,14 +52,12 @@ public class FilterByPriceSteps extends BaseClass {
 
     @When("user clicks Remove Filter Price button")
     public void userClicksRemovePriceFilterButton() {
-        genericActions.waitForElement(filterByPricePage.getRemoveFilterButton());
         filterByPriceActions.clickRemoveFilterButton();
         log.info("User removes the filter for the products prices");
     }
 
     @When("user filters products by price over 50")
     public void userFiltersProductsByPriceOver50() {
-        genericActions.waitForElement(filterByPricePage.getPriceOver50FilterButton());
         filterByPriceActions.clickOver50PriceButton();
         log.info("User filters the products with the price under 50");
     }

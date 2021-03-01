@@ -31,7 +31,6 @@ public class EditUserDataSteps extends BaseClass {
 
     @Given("user access My Account page")
     public void userAccessMyAccountPage() {
-        genericActions.waitForElement(logInPageObject.getAccountName());
         editUserDataPageActions.clickAccountNameButton();
         log.info("User navigates to My account page");
     }
@@ -45,7 +44,6 @@ public class EditUserDataSteps extends BaseClass {
 
     @When("user clicks on Save button")
     public void userClicksOnSaveButton() {
-        genericActions.waitForElement(customerInfoPage.getSaveCustomerInfoButton());
         editUserDataPageActions.clickSaveCustomerInfoButton();
         log.info("User clicks on Save customer information button");
     }
@@ -73,21 +71,18 @@ public class EditUserDataSteps extends BaseClass {
 
     @Then("{} message is displayed for the First Name text field")
     public void checkFirstNameErrorMessage(CustomerInfoValidationErrorsEnum error) {
-        genericActions.waitForElement(customerInfoPage.getFirstNameIsRequiredError());
         assertThat("First Name Error is displayed correctly", editUserDataPageActions.getFirstNameErrorMessage(), Is.is(error.getErrorMessage()));
         log.info("Expected error for First Name text field appears");
     }
 
     @Then("{} message is displayed for the Last Name text field")
     public void checkLastNameErrorMessage(CustomerInfoValidationErrorsEnum error) {
-        genericActions.waitForElement(customerInfoPage.getLastNameIsRequiredError());
         assertThat("Last Name Error is displayed correctly", editUserDataPageActions.getLastNameErrorMessage(), Is.is(error.getErrorMessage()));
         log.info("Expected error for Last Name text field appears");
     }
 
     @Then("{} message is displayed for the Email text field")
     public void checkEmailErrorMessage(CustomerInfoValidationErrorsEnum error) {
-        genericActions.waitForElement(customerInfoPage.getEmailIsRequiredError());
         assertThat("Email Error is displayed correctly", editUserDataPageActions.getEmailErrorMessage(), Is.is(error.getErrorMessage()));
         log.info("Expected error for Email text field appears");
     }

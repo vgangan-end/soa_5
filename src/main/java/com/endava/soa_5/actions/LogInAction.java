@@ -15,7 +15,7 @@ public class LogInAction extends BaseClass {
     }
 
     public void clickLogInButton() {
-        logInPageObject.getLogInButton().click();
+        genericActions.clickOnElement(logInPageObject.getLogInButton());
     }
 
     public String checkAccountNameIsDisplayed() {

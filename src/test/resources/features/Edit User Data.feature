@@ -4,7 +4,7 @@ Feature: Verify Edit User Data
     Given HOME_PAGE page is displayed
     And User logs in using correct credentials
     And user clicks in Log In button
-    And User is logged in
+    And User is logged in.
     And user access My Account page
     And MY_ACCOUNT page is displayed
     When user fills in the customer info with the following data:
@@ -25,7 +25,7 @@ Feature: Verify Edit User Data
     Given HOME_PAGE page is displayed
     And User logs in using correct credentials
     And user clicks in Log In button
-    And User is logged in
+    And User is logged in.
     And user access My Account page
     And MY_ACCOUNT page is displayed
     When user clears customer info data from Your Personal Details

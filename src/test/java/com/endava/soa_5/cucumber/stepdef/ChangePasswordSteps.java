@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 
 public class ChangePasswordSteps extends LogInAction {
-    static Logger log = LoggerFactory.getLogger(ChangePasswordSteps.class);
+    Logger log = LoggerFactory.getLogger(ChangePasswordSteps.class);
     ChangePasswordActions changePasswordActions = new ChangePasswordActions();
 
     @Given("User is logged in")

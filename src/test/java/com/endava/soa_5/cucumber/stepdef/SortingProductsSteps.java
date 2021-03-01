@@ -12,7 +12,7 @@ import static org.hamcrest.core.Is.is;
 
 public class SortingProductsSteps {
     SortingProductsAction sortingProductsAction = new SortingProductsAction();
-    static Logger log = LoggerFactory.getLogger(SortingProductsSteps.class);
+    Logger log = LoggerFactory.getLogger(SortingProductsSteps.class);
 
     @Given("User navigate on productsListPage")
     public void userNavigateOnProductsListPage() {
@@ -35,7 +35,7 @@ public class SortingProductsSteps {
 
     @When("user selects sorting by Price: High to Low")
     public void userSelectsSortingByPriceHighToLow() {
-        SortingProductsAction.selectSortingHighToLow();
+        sortingProductsAction.selectSortingHighToLow();
         log.info("User selects sorting by price high to low");
     }
 

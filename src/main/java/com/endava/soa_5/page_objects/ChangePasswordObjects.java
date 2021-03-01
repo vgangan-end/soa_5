@@ -7,7 +7,6 @@ import org.openqa.selenium.support.FindBy;
 
 @Getter
 public class ChangePasswordObjects extends BaseClass {
-
     @FindBy(xpath = "//div[@class=\"header-links\"]//a[@class=\"account\"]")
     private WebElement userEmail;
     @FindBy(xpath = "//ul[@class=\"list\"]//a[@href=\"/customer/changepassword\"]")

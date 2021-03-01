@@ -7,7 +7,6 @@ import org.openqa.selenium.support.FindBy;
 
 @Getter
 public class LogInPageObject extends BaseClass {
-
     @FindBy(xpath = "//div[@class=\"header-links\"]//a[@class=\"ico-login\"]")
     private WebElement logInLink;
     @FindBy(xpath = "//a[@href=\"/logout\"]")

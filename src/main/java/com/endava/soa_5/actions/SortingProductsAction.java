@@ -23,12 +23,14 @@ public class SortingProductsAction extends BaseClass {
         sortingProductsObjects.getDesktopsLink().click();
     }
 
-    public static void selectSortingLowToHigh() {
+    public void selectSortingLowToHigh() {
+        genericActions.waitForElement(sortingProductsObjects.getSortDropDown());
         sortingProductsObjects.getSortDropDown().click();
         sortingProductsObjects.getPriceLowToHigh().click();
     }
 
-    public static void selectSortingHighToLow() {
+    public void selectSortingHighToLow() {
+        genericActions.waitForElement(sortingProductsObjects.getSortDropDown());
         sortingProductsObjects.getSortDropDown().click();
         sortingProductsObjects.getPriceHighToLow().click();
     }

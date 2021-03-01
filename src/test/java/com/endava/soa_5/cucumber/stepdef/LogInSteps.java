@@ -12,7 +12,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
 public class LogInSteps extends BaseClass {
-    static Logger log = LoggerFactory.getLogger(LogInSteps.class);
+    Logger log = LoggerFactory.getLogger(LogInSteps.class);
     LogInAction logInAction = new LogInAction();
 
     @Given("User logs in using correct credentials")

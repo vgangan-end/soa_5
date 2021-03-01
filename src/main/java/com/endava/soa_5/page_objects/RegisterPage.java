@@ -12,20 +12,6 @@ import java.util.Map;
 @Getter
 public class RegisterPage extends BaseClass {
 
-    private @FindBy(css = "#gender-male")
-    WebElement maleRadioButton;
-    private @FindBy(css = "#gender-female")
-    WebElement femaleRadioButton;
-    private @FindBy(css = "#FirstName")
-    WebElement firstName;
-    private @FindBy(css = "#LastName")
-    WebElement lastName;
-    private @FindBy(css = "#Email")
-    WebElement email;
-    private @FindBy(css = "#Password")
-    WebElement password;
-    private @FindBy(css = "#ConfirmPassword")
-    WebElement confirmPassword;
     private @FindBy(css = "#register-button")
     WebElement registerButton;
 

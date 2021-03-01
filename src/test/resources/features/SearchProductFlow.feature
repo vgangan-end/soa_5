@@ -1,7 +1,7 @@
 @SearchPage
 Feature: Verify that search functionality return desired products
 
-  Scenario: user access search Page
+  Background: user access search Page
     Then user is on search page
 
   Scenario Outline: Verify that search will return products list

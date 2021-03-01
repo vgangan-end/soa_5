@@ -19,14 +19,6 @@ public class SearchPage extends BaseClass {
     private WebElement advancedSearchCheckBox;
     @FindBy(xpath = "//select[@id='Cid']")
     private WebElement categoryDropDown;
-    @FindBy(xpath = "//input[@id='Sid']")
-    private WebElement searchInProductDescriptionCheckBox;
-    @FindBy(xpath = "//input[@id='Isc']")
-    private WebElement searchInSubCategoriesCheckBox;
-    @FindBy(xpath = "//input[@id='Pf']")
-    private WebElement priceFromField;
-    @FindBy(xpath = "//input[@id='Pt']")
-    private WebElement priceToField;
     @FindBy(xpath = "//strong[@class='warning']")
     private WebElement warningMessage;
 }

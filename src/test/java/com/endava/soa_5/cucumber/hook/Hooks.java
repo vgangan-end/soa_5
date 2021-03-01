@@ -1,7 +1,6 @@
 package com.endava.soa_5.cucumber.hook;
 
 import com.endava.soa_5.abstract_classes.BaseClass;
-import com.endava.soa_5.cucumber.stepdef.PreconditionSteps;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;

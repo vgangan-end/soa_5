@@ -6,7 +6,7 @@ import com.endava.soa_5.actions.GenericActions;
 import com.endava.soa_5.context.ScenarioContext;
 import com.endava.soa_5.page_objects.LogInPageObject;
 import com.endava.soa_5.page_objects.MyAccountPage.CustomerInfoPage;
-import com.endava.soa_5.page_objects.enums.CustomerInfoValidationErrors;
+import com.endava.soa_5.page_objects.enums.CustomerInfoValidationErrorsEnum;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -72,21 +72,21 @@ public class EditUserDataSteps extends BaseClass {
     }
 
     @Then("{} message is displayed for the First Name text field")
-    public void checkFirstNameErrorMessage(CustomerInfoValidationErrors error) {
+    public void checkFirstNameErrorMessage(CustomerInfoValidationErrorsEnum error) {
         genericActions.waitForElement(customerInfoPage.getFirstNameIsRequiredError());
         assertThat("First Name Error is displayed correctly", editUserDataPageActions.getFirstNameErrorMessage(), Is.is(error.getErrorMessage()));
         log.info("Expected error for First Name text field appears");
     }
 
     @Then("{} message is displayed for the Last Name text field")
-    public void checkLastNameErrorMessage(CustomerInfoValidationErrors error) {
+    public void checkLastNameErrorMessage(CustomerInfoValidationErrorsEnum error) {
         genericActions.waitForElement(customerInfoPage.getLastNameIsRequiredError());
         assertThat("Last Name Error is displayed correctly", editUserDataPageActions.getLastNameErrorMessage(), Is.is(error.getErrorMessage()));
         log.info("Expected error for Last Name text field appears");
     }
 
     @Then("{} message is displayed for the Email text field")
-    public void checkEmailErrorMessage(CustomerInfoValidationErrors error) {
+    public void checkEmailErrorMessage(CustomerInfoValidationErrorsEnum error) {
         genericActions.waitForElement(customerInfoPage.getEmailIsRequiredError());
         assertThat("Email Error is displayed correctly", editUserDataPageActions.getEmailErrorMessage(), Is.is(error.getErrorMessage()));
         log.info("Expected error for Email text field appears");

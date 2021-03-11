@@ -1,10 +1,16 @@
 package com.endava.soa_5ed.workshop.junit_streams;
 
+import com.endava.soa_5ed.workshop.streams.Animal;
+import com.endava.soa_5ed.workshop.streams.Cage;
+import com.endava.soa_5ed.workshop.streams.Zoo;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+import java.util.List;
 
+import static com.endava.soa_5ed.workshop.streams.Food.*;
+import static com.endava.soa_5ed.workshop.streams.ZooManager.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.is;
@@ -64,13 +70,13 @@ public class ZooTest {
 
     @Test
     void checkCountAllHerbivores() {
-        int expectedResult = 2;
-        assertThat("Count all Herbovores old way", countAllHerbivores(zoo.getCageList()), is(expectedResult));
+        int expectedResult = 3;
+        assertThat("Count all Herbivores old way", countAllHerbivores(zoo.getCageList()), is(expectedResult));
     }
 
     @Test
     void checkCountAllHerbivoresWithStream() {
-        int expectedResult = 2;
-        assertThat("Count all Herbovores old way", countAllHerbivoresWithStream(zoo.getCageList()), is(expectedResult));
+        int expectedResult = 3;
+        assertThat("Count all Herbivores new way", countAllHerbivoresWithStream(zoo.getCageList()), is(expectedResult));
     }
 }

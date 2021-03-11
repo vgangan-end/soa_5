@@ -1,6 +1,9 @@
 package com.endava.soa_5ed.workshop.streams;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class ZooManager {
 
@@ -33,7 +36,7 @@ public class ZooManager {
     public static int countAllHerbivores(List<Cage> cageList) {
         int count = 0;
         for (Cage cage : cageList) {
-            if (cage.getAnimal().isHebivore()) {
+            if (cage.getAnimal().isHerbivore()) {
                 count++;
             }
         }
